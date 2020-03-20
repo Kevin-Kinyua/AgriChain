@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AvocadoApp": {
+    "avocado-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/AvocadoApp",
+            "outputPath": "dist/avocado-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "AvocadoApp:build"
+            "browserTarget": "avocado-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "AvocadoApp:build:production"
+              "browserTarget": "avocado-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AvocadoApp:build"
+            "browserTarget": "avocado-app:build"
           }
         },
         "test": {
@@ -88,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -110,15 +112,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "AvocadoApp:serve"
+            "devServerTarget": "avocado-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "AvocadoApp:serve:production"
+              "devServerTarget": "avocado-app:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "AvocadoApp"
+    }
+  },
+  "defaultProject": "avocado-app"
 }

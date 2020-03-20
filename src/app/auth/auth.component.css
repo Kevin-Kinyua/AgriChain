@@ -1,0 +1,28 @@
+.home-container{
+    height: 100%;
+}
+.home-content{ 
+    margin: 15x;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: white;
+    height: 100%;
+}
+
+
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+
+  mat-card{
+    margin-top: 20px;
+    margin-bottom: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+
+}

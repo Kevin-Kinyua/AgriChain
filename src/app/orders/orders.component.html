@@ -1,0 +1,35 @@
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <!-- Sidenav List goes here -->
+    <app-sidenav (closeSideNavigation)= "sidenav.close()"> </app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Header will go here -->
+    <app-header (SideNavigationToggle)="sidenav.toggle()"> </app-header>
+    <router-outlet></router-outlet>
+
+    <div class="dashboard-content">
+        
+      <mat-card>Your orders</mat-card>
+  
+      <mat-card>
+        <mat-tab-group  >
+          <mat-tab label="Check In"  > 
+            <app-check-in></app-check-in>
+          </mat-tab>
+          <mat-tab label="Dispatch"> 
+            <app-dispatch></app-dispatch>
+          </mat-tab>
+        </mat-tab-group> 
+      </mat-card>
+      
+  
+     </div>
+    
+  </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!-- -------------------------------------------------------------------------------------------------------- -->
+ 
+

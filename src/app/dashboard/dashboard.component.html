@@ -1,0 +1,145 @@
+<!-- <router-outlet></router-outlet> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <!-- Sidenav List goes here -->
+      <app-sidenav (closeSideNavigation)= "sidenav.close()"> </app-sidenav>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      
+
+      <!-- Header will go here -->
+      <app-header (SideNavigationToggle)="sidenav.toggle()"> </app-header>
+  
+      <!-- Navtabs will go here -->
+      <!-- <app-navtabs color="primary"></app-navtabs> -->
+      <router-outlet></router-outlet>
+      
+      <div class="dashboard-content">
+        
+        <mat-card>WELCOME TO  {{businessname}} AGRICHAIN
+          <br>
+          <button mat-fab >
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-card>
+
+        <mat-card><button mat-fab style="margin-right: 100px;" >
+          <mat-icon>add</mat-icon>
+        </button></mat-card>       
+        
+        <!-- <mat-card class="add-business-card">
+         
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Add Business Outlet
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-panel-description>
+              
+                  <div class="add-business">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Farm name</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Farm Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option">Arable (Crops)</mat-option>
+                      <mat-option value="option">Mixed (Crops and animals)</mat-option>
+                      <mat-option value="option">Subsistence (Grown just for the farmer and his family)</mat-option>
+                      <mat-option value="option">Commercial (Grown to sell)</mat-option>
+                      <mat-option value="option">Intensive (High inputs of labour or capital ususally small)</mat-option>
+                      <mat-option value="option">Extensive (Low inputs of labour or capital)</mat-option>
+                      <mat-option value="option">Sedentary (Permanently in in one place)</mat-option>
+                      
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Main Product</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Location</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                  <br>  
+                  <button mat-raised-button color="accent"
+                  (closeSideNavigation)= "sidenav.close()">Submit</button>              
+                </div>
+         
+            </mat-panel-description>
+          </mat-expansion-panel> 
+        </mat-card>
+
+        <mat-card  class="add-business-card">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Add Asset
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+         
+                  <mat-form-field appearance="fill">
+                    <mat-label>Crop name</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Crop Type</mat-label>
+                    <mat-select>
+                      <mat-option value="option">Food crops (wheat, rice, maize, millets, pulses.)</mat-option>
+                      <mat-option value="option">Cash crops (sugarcane, tobacco, jute, cotton, oilseeds.)</mat-option>
+                      <mat-option value="option">Horticulture crops (Fruits and vegetables.)</mat-option>
+                      <mat-option value="option">Plantation crops (tea, coffee, coconut, rubber.)</mat-option>
+                                            
+                    </mat-select>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Main Product</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Description (.include minimum residue levels)</mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                  <br>  
+                  <button mat-raised-button color="accent"
+                  (closeSideNavigation)= "sidenav.close()">Submit</button>              
+                
+          </mat-expansion-panel>
+        </mat-card> -->
+<!-- ------------------------------------------------------------------------------------------------ -->
+<!--         
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Avocado</mat-card-title>
+              <mat-card-subtitle>Crop Breed</mat-card-subtitle>
+            </mat-card-header>
+            
+            <mat-card-content>
+              <img mat-card-image src="/assets/img/avocado.jpg" alt="avo" width="50" height="180">
+            </mat-card-content>
+           
+          </mat-card>
+           -->
+<!-- ------------------------------------------------------------------------------------------------ -->
+      </div>
+ 
+    </mat-sidenav-content>
+   
+  </mat-sidenav-container>
+

@@ -1,0 +1,80 @@
+<!-- <router-outlet></router-outlet> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <!-- Sidenav List goes here -->
+      <app-sidenav (closeSideNavigation)= "sidenav.close()"> </app-sidenav>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      
+
+      <!-- Header will go here -->
+      <app-header (SideNavigationToggle)="sidenav.toggle()"> </app-header>
+  
+      <!-- Navtabs will go here -->
+      <!-- <app-navtabs color="primary"></app-navtabs> -->
+      <router-outlet></router-outlet>
+      
+    <div class="dashboard-content">
+        <mat-card>Asset lead timeline</mat-card>
+        
+        <mat-card class="timeline-card">
+            <mat-toolbar color="primary">
+                <span>Timeline demo</span>
+              </mat-toolbar>
+              <!-- <mat-toolbar >
+                <button mat-raised-button (click)="addEntry()">Add Entry</button>
+                <button mat-raised-button color="primary" (click)="removeEntry()">Remove Entry</button>
+              </mat-toolbar> -->
+            
+                <br>
+                <button mat-raised-button (click)="alternate = !alternate" color="accent">Toggle Alternate</button>
+                <!-- <button mat-raised-button (click)="toggle = !toggle" color="accent">Toggle Toggle</button> -->
+                <!-- <button mat-raised-button (click)="expandEnabled = !expandEnabled" color="accent">Toggle Expand Enabled</button> -->
+                  <!-- <button mat-raised-button (click)="toggleSide()" color="accent">Toggle Side</button> -->
+              
+              <br>  
+                  <mat-form-field>
+                    <mat-label>Order Number</mat-label>
+                    <input matInput  required>
+                  </mat-form-field>
+              
+<!--               
+              <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
+                
+                <mgl-timeline-entry *ngFor="let entry of entries; let i = index;" (expand)="onExpandEntry($event, i)">
+                  <mat-card color = "primary">
+                    <mat-expansion-panel>
+                  <mgl-timeline-entry-header (click)="onHeaderClick($event)">
+                    <mat-panel-title>
+                        <div>{{entry.header}}</div>
+                    </mat-panel-title>
+                  </mgl-timeline-entry-header>
+
+                  <mgl-timeline-entry-content>
+                    <div>
+                      <div>{{entry.content}}</div>
+                      <div>{{entry.content}}</div>
+                      <div>{{entry.content}}</div>
+                    </div>
+                  </mgl-timeline-entry-content>
+
+                  <mgl-timeline-entry-dot [class]="color ? 'primary' : 'accent'" [size]="size" (click)="onDotClick($event)"></mgl-timeline-entry-dot>
+                  <mgl-timeline-entry-side>2018</mgl-timeline-entry-side>
+                </mat-expansion-panel>
+                  </mat-card>
+                </mgl-timeline-entry>
+              
+              </mgl-timeline> -->
+            
+        </mat-card>
+
+        
+    </div>
+ 
+    </mat-sidenav-content>
+   
+  </mat-sidenav-container>
+
+<!-- ---------------------------------------------------------------------------------- -->

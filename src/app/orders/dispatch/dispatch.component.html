@@ -1,0 +1,130 @@
+<p>dispatch works!</p>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form >
+        <ng-template matStepLabel >Crop name</ng-template>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="firstCtrl" required> 
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperNext color="primary" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form >
+        <ng-template matStepLabel>Crop type</ng-template>
+        <mat-form-field>
+          <mat-label>Crop type</mat-label>
+          <input matInput formControlName="secondCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious >Back</button>
+          <button mat-raised-button matStepperNext color="primary" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+      <form>
+        <ng-template matStepLabel>Quantity</ng-template>
+        <mat-form-field>
+          <mat-label type= "number">Fill out Dispatch Quantity</mat-label>
+          <input matInput formControlName="thirdCtrl" required type="number">
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious >Back</button>
+          <button mat-raised-button matStepperNext color="primary" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fourthFormGroup">
+      <form >
+        <ng-template matStepLabel> Send to </ng-template>
+        <mat-form-field>
+          <mat-label>Select Receiver</mat-label>
+      <mat-select>
+        <mat-option value="warehouse">Warehouse</mat-option>
+        <mat-option value="distributor">Distributor</mat-option>
+        <mat-option value="retailer">Retailer</mat-option>
+      </mat-select>
+          <input matInput formControlName="fourthCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious >Back</button>
+          <button mat-raised-button matStepperNext color="primary" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fifthFormGroup">
+      <form>
+        <ng-template matStepLabel>Dispatch destination</ng-template>
+        <mat-form-field>
+          <mat-label>Destination Location</mat-label>
+          <input matInput formControlName="fifthCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious >Back</button>
+          <button mat-raised-button matStepperNext color="primary" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sixthFormGroup">
+      <form >
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field>
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="sixthCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious >Back</button>
+          <button mat-raised-button matStepperNext color="primary" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="seventhFormGroup">
+      <form >
+        <ng-template matStepLabel>Mode of transport</ng-template>
+        <mat-card>
+        <mat-form-field>
+          <mat-label>Select logistical contractor</mat-label>
+      <mat-select>
+        <mat-option value="option">Siginon</mat-option>
+        <mat-option value="option">Sendy</mat-option>
+        <mat-option value="option">Seaways</mat-option>
+        <mat-option value="option">DHL</mat-option>
+        <mat-option value="option">other</mat-option>
+      </mat-select>
+          <input matInput formControlName="seventhCtrl" required>
+        </mat-form-field>
+      </mat-card>
+      <mat-card>
+        <mat-form-field>
+          <mat-label>Select transport mode</mat-label>
+      <mat-select>
+        <mat-option value="truck">Cargo Truck</mat-option>
+        <mat-option value="truck">Cargo Train</mat-option>
+        <mat-option value="cargo Ship">Cargo Ship</mat-option>
+        <mat-option value="plane">Cargo Plane</mat-option>
+      </mat-select>
+          <input matInput formControlName="seventhCtrl" required>
+        </mat-form-field>
+      </mat-card>
+        <div>
+          <button mat-button matStepperPrevious >Back</button>
+          <button mat-raised-button matStepperNext color="primary" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirm</ng-template>
+      <p>Confirm Dispatch order</p>
+      <mat-card>
+        <button mat-raised-button matStepperNext color="accent" >Dispatch</button>
+      </mat-card>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>

@@ -1,0 +1,152 @@
+
+<mat-vertical-stepper  #stepper>
+
+  <mat-step [stepControl]="firstFormGroup">
+    <form >
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <mat-label>Select a role</mat-label>
+        <mat-select [(value)]="selected">
+        <mat-option value="Farmer">Farmer</mat-option>
+        <mat-option value="Pack House">Pack House</mat-option>
+        <mat-option value="Warehouse">Warehouse</mat-option>
+        <mat-option value="Distributor">Distributor</mat-option>
+        <mat-option value="Importer">Importer</mat-option>
+        <mat-option value="Exporter">Exporter</mat-option>
+        <mat-option value="Terminus">Terminus</mat-option>
+        <mat-option value="Wholesaler">Wholesaler</mat-option>
+        <mat-option value="Retailer">Retailer</mat-option>
+        <mat-option value="Other">Other</mat-option>                                      
+        </mat-select>              
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>If other, please specify.</mat-label>
+        <input matInput required  >
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form >
+      <ng-template matStepLabel>Fill out your Business Details</ng-template>
+      
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                If your Business is already registered you can skip to the next step
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                click here to register
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-form-field>
+              <mat-label>Business Name</mat-label>
+              <input matInput required formControlName="secondCtrl" >
+              <br>
+              <!-- <p>{{businessName</p> -->
+            </mat-form-field>
+            <div>
+              <button mat-raised-button matStepperNext >Next</button>
+            </div>
+            <br>
+            <mat-form-field>
+                <mat-label>Business Description</mat-label>
+                <textarea matInput  placeholder="My business Value Proposition" formControlName="secondCtrl" type="text"></textarea>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <mat-label>Business Location</mat-label>
+                <input matInput required formControlName="secondCtrl" type="search">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <mat-label>Business email</mat-label>
+                <input matInput required formControlName="secondCtrl" type="email">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <mat-label>Business Phone Contact</mat-label>
+                <input matInput required formControlName="secondCtrl" type="text">
+              </mat-form-field>
+              <br>
+              <button mat-raised-button type="submit" color="accent" (click)="clickMethod('name')">Submit</button>
+          </mat-expansion-panel>
+     
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup">
+    <form >
+      <ng-template matStepLabel>Fill out your Details</ng-template>
+      <mat-form-field>
+        <mat-label>Full Names</mat-label>
+        <input matInput required>
+        
+      </mat-form-field>
+      <br>
+        <mat-form-field>
+          <mat-label>Role</mat-label>
+          <input matInput required  placeholder="My Job Description"> 
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Phone Contact</mat-label>
+          <input matInput required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Business email</mat-label>
+          <input matInput required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" required>
+        </mat-form-field>
+    </form>
+  </mat-step>
+
+  <mat-step  [stepControl]="fourthFormGroup">
+    <ng-template matStepLabel>Confirm</ng-template>
+    <mat-card>
+      <h4>Role</h4>
+      <p color="accent">You selected {{selected}} role</p>
+      <br>
+      <h4>Business Details</h4>
+      <p>Business name: </p>
+      <p>Business description:</p>
+      <p>Business location:</p>
+      <p>Business phone contact: </p>
+      <br>
+      <h4>User Details</h4>
+      <p>User name:</p>
+      <p>User role: </p>
+      <p>User phone contact: </p>
+      <p>User email: </p>
+      <br>
+     
+    <button mat-raised-button type="submit" color="accent" (click)="clickMethod('name')">Submit</button>
+  </mat-card>
+
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+
+</mat-vertical-stepper>
