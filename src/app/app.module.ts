@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
 
-// import { MglTimelineModule } from 'angular-mgl-timeline';
+import { MglTimelineModule } from 'angular-mgl-timeline';
 // import { FormsModule } from '@angular/forms';
 // import { ReactiveFormsModule } from '@angular/forms';
 
@@ -41,6 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { NavtabsComponent } from './navtabs/navtabs.component';
 import { SettingsComponent } from './settings/settings.component';
+import { from } from 'rxjs';
 // import { SliderModule } from 'angular-image-slider';
 
 @NgModule({
@@ -73,8 +75,6 @@ import { SettingsComponent } from './settings/settings.component';
     NavtabsComponent,
     SettingsComponent
     // SliderModule
-    // AngularFireModule,
-    // AngularFireDatabaseModule
   ],
   imports: [
     BrowserModule,
@@ -82,13 +82,16 @@ import { SettingsComponent } from './settings/settings.component';
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
     // ReactiveFormsModule
     // FormControlDirective
-    // MglTimelineModule
+    MglTimelineModule
     // FormsModule,
     // ReactiveFormsModule,
     // FormControlDirective
+
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

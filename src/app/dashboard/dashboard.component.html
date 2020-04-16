@@ -17,19 +17,38 @@
       <router-outlet></router-outlet>
       
       <div class="dashboard-content">
-        
-        <mat-card>WELCOME TO  {{businessname}} AGRICHAIN
+<!--         
+        <mat-card>WELCOME TO AGRICHAIN
           <br>
           <button mat-fab >
             <mat-icon>add</mat-icon>
           </button>
-        </mat-card>
+        </mat-card> -->
 
         <mat-card><button mat-fab style="margin-right: 100px;" >
           <mat-icon>add</mat-icon>
-        </button></mat-card>       
+        </button></mat-card>   
         
-        <!-- <mat-card class="add-business-card">
+        <!-- pop up modal============================================================================================= -->
+        <!-- <mat-card>
+          <ol>
+            <li>
+              <mat-form-field>
+                <mat-label>What's your name?</mat-label>
+                <input matInput [(ngModel)]="name">
+              </mat-form-field>
+            </li>
+            <li>
+              <button mat-raised-button (click)="openDialog()">Pick one</button>
+            </li>
+            <li *ngIf="animal">
+              You chose: <i>{{animal}}</i>
+            </li>
+          </ol>
+        </mat-card> -->
+        <!-- ========================================================================================================== -->
+<!--         
+        <mat-card class="add-business-card">
          
         <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -80,9 +99,9 @@
          
             </mat-panel-description>
           </mat-expansion-panel> 
-        </mat-card>
+        </mat-card> -->
 
-        <mat-card  class="add-business-card">
+        <mat-card  class="add-asset-card">
           <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
@@ -120,22 +139,10 @@
                   (closeSideNavigation)= "sidenav.close()">Submit</button>              
                 
           </mat-expansion-panel>
-        </mat-card> -->
+        </mat-card>
 <!-- ------------------------------------------------------------------------------------------------ -->
-<!--         
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Avocado</mat-card-title>
-              <mat-card-subtitle>Crop Breed</mat-card-subtitle>
-            </mat-card-header>
-            
-            <mat-card-content>
-              <img mat-card-image src="/assets/img/avocado.jpg" alt="avo" width="50" height="180">
-            </mat-card-content>
-           
-          </mat-card>
-           -->
+
+          
 <!-- ------------------------------------------------------------------------------------------------ -->
       </div>
  

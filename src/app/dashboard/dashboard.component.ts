@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Inject } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 export interface PeriodicElement {
   name: string;
@@ -25,12 +26,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 //  * @title Table with filtering
 //  */
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
 
   constructor() { }
 
@@ -47,3 +50,4 @@ export class TableFilteringExample {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
+//////////////////////////////////////////////////////////////////
